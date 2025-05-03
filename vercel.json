@@ -1,5 +1,10 @@
 {
     "version": 2,
+    "functions": {
+        "api/index.php": {
+            "excludeFiles": "{node_modules,tests,.git,.env,storage/logs,storage/framework/cache,storage/framework/sessions,storage/framework/views,public/hot,bootstrap/cache,public}/**"
+        }
+    },
     "builds": [
         {
             "src": "api/index.php",
