@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Products</title>
+    <title>Manajemen Produk | N-MERCE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
         @media (max-width: 768px) {
@@ -108,6 +108,7 @@
 
         <!-- Table Produk -->
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+             <div class="overflow-x-auto">
             <table class="min-w-full bg-white responsive-table">
                 <thead class="bg-gray-800 text-white">
                     <tr>
@@ -255,6 +256,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>    
         </div>
         <!-- Pagination -->
         <div class="mt-6">

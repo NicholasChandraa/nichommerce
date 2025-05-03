@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Produk</title>
+    <title>Edit Produk | N-MERCE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
         .modal {
@@ -51,7 +52,7 @@
 
         .image-preview {
             width: 100%;
-            height: 200px;
+            height: 100%;
             border: 2px dashed #ddd;
             border-radius: 10px;
             display: flex;
@@ -63,7 +64,7 @@
         }
 
         .image-preview img {
-            width: 100%;
+            width: 50%;
             height: 100%;
             object-fit: cover;
         }
@@ -166,9 +167,16 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            $('#category_id').select2({
+                placeholder: 'Pilih Kategori',
+                allowClear: true
+            });
+
             var submitButton = document.getElementById('submit-button');
             var cancelButton = document.getElementById('cancel-button');
             var confirmationModal = document.getElementById('confirmationModal');

@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NJS | Daftar</title>
+    <title>N-MERCE | Daftar</title>
     @vite('resources/css/app.css')
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
 </head>
 
 <body class="bg-gray-100">
@@ -14,8 +14,8 @@
         <div class="bg-white shadow-md rounded-lg flex flex-col md:flex-row max-w-4xl p-5 md:p-0">
             <div class="md:w-1/2 p-5">
                 <div class="flex justify-between mb-4 mt-1 h-14 items-center">
+                    <img src="{{ asset('images/logo-nichommerce3.png') }}" alt="Nichommerce Logo" class="w-24 h-full">
                     <h2 class="text-2xl font-bold">Buat Akun</h2>
-                    <img src="{{ asset('images/njs-logo.png') }}" alt="NJS Logo" class="w-24 h-10">
                 </div>
                 <p class="mb-4 text-center mt-8 font-bold text-xl">DAFTAR</p>
 
@@ -61,7 +61,8 @@
                         class="text-purple-600 text-[cd15bd]">Log In</a></p>
             </div>
             <div class="md:w-1/2 flex justify-center items-center p-5">
-                <img src="{{ asset('images/gambar-login2.jpg') }}" alt="NJS ZX-1 V2" class="h-full">
+                    <img src="{{ asset('images/login2.jpg') }}" alt="NJS ZX-1 V2" class="h-full">
+                </div>
             </div>
         </div>
     </div>

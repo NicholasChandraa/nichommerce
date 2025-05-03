@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\OrderHistory;
 use App\Services\MidtransService;
 use Illuminate\Support\Facades\Log;
 
@@ -69,6 +70,8 @@ class CheckoutController extends Controller
         ]);
 
         $order->save();
+        
+        
 
         foreach ($cart->cartItems as $cartItem) {
             $orderItem = new OrderItem([
@@ -78,6 +81,15 @@ class CheckoutController extends Controller
                 'price' => $cartItem->product->price,
             ]);
             $orderItem->save();
+            
+            OrderHistory::create([
+                'user_id' => $user->id,
+                'order_id' => $order->id,
+                'product_id' => $cartItem->product_id,
+                'quantity' => $cartItem->quantity,
+                'total_price' => $cartItem->product->price * $cartItem->quantity,
+                'order_status' => 'pending',
+            ]);
 
             $cartItem->product->reduceStock($cartItem->quantity);
         }
@@ -99,19 +111,20 @@ class CheckoutController extends Controller
             ]
         ];
 
-        Log::info('Midtrans parameters: ' . json_encode($params));
+        // Log::info('Midtrans parameters: ' . json_encode($params));
 
-        try {
-            $snapTransaction = $this->midtrans->createTransaction($params);
-            $snapToken = $snapTransaction->token;
-            Log::info('Midtrans Snap Token: ' . $snapToken);
+        // try {
+        //     $snapTransaction = $this->midtrans->createTransaction($params);
+        //     $snapToken = $snapTransaction->token;
+        //     Log::info('Midtrans Snap Token: ' . $snapToken);
 
-            // Simpan order_id dalam session
-            $request->session()->put('order_id', $order->id);
-        } catch (\Exception $e) {
-            return back()->withErrors(['message' => 'Payment failed: ' . $e->getMessage()]);
-        }
+        //     // Simpan order_id dalam session
+        //     $request->session()->put('order_id', $order->id);
+        // } catch (\Exception $e) {
+        //     return redirect()->route('checkout.index')->with('error', 'Payment failed: ' . $e->getMessage());
+        // }
 
-        return view('checkout.payment', compact('snapToken', 'order'));
+        // return view('checkout.payment', compact('snapToken', 'order'));
+        return view('checkout.payment');
     }
 }

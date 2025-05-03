@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NJS | Login</title>
+    <title>N-MERCE | Login</title>
     @vite('resources/css/app.css')
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
 </head>
 
 <body class="bg-gray-100">
@@ -15,8 +15,8 @@
 
             <div class="md:w-1/2 p-5">
                 <div class="flex justify-between mb-4 mt-1 h-14 items-center">
+                    <img src="{{ asset('images/logo-nichommerce3.png') }}" alt="NJS Logo" class="w-24 h-full rounded-lg">
                     <h2 class="text-2xl font-bold">Selamat Datang</h2>
-                    <img src="{{ asset('images/njs-logo.png') }}" alt="NJS Logo" class="w-24 h-10">
                 </div>
                 <h1 class="mb-4 mt-8 md:mt-20 font-bold text-center text-xl">LOGIN</h1>
 
@@ -66,7 +66,7 @@
                         class="text-purple-600 text-[cd15bd]">Daftar disini</a></p>
             </div>
             <div class="md:w-1/2 flex justify-center items-center p-5">
-                <img src="{{ asset('images/gambar-login.jpg') }}" alt="NJS ZX-1 V2" class="w-full h-full">
+                <img src="{{ asset('images/login7.jpg') }}" alt="NJS ZX-1 V2" class="w-full h-full">
             </div>
         </div>
 

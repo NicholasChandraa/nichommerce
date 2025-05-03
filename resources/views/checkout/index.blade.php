@@ -1,15 +1,15 @@
 @extends('layouts.mainLayout')
 
+@section('title', 'Keranjang | N-MERCE')
+
 @section('content')
     <section class="bg-white">
         <div class="container py-16 mx-auto">
-            @if (session('error'))
-                <div class="card card-danger">
-                    <div class="card-body">
-                        {{ session('error') }}
-                    </div>
-                </div>
-            @endif
+            <!--@if (session('error'))-->
+            <!--    <div class="alert alert-danger">-->
+            <!--        {{ session('error') }}-->
+            <!--    </div>-->
+            <!--@endif-->
             <div class="font-bold text-3xl mb-5 text-center">Order Confirmation</div>
             <div class="border-b-2 border-black pb-8 text-center">
                 <h1 class="font-semibold text-xl">Hello {{ Auth::user()->name }},</h1>

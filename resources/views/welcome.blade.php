@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register Page</title>
     @vite('resources/css/app.css')
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce3.png') }}" type="image/x-icon">
 </head>
 
 <body class="bg-gray-100">

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buat Artikel</title>
+    <title>Buat Artikel | N-MERCE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
         .modal {
@@ -51,7 +51,7 @@
 
         .image-preview {
             width: 100%;
-            height: 200px;
+            height: 100%;
             border: 2px dashed #ddd;
             border-radius: 10px;
             display: flex;
@@ -63,7 +63,7 @@
         }
 
         .image-preview img {
-            width: 100%;
+            width: 50%;
             height: 100%;
             object-fit: cover;
         }

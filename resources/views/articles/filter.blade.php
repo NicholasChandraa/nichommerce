@@ -1,5 +1,7 @@
 @extends('article-layouts.articlePage')
 
+@section('title', 'Artikel | N-MERCE')
+
 @section('content')
     <style>
         .popular-article img {

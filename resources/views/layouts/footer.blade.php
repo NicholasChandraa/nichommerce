@@ -2,7 +2,7 @@
     <div class="flex items-center justify-center py-16 px-3 h-auto lg:h-[400px]">
         <div class="text-center">
             <p class="text-sm text-green-500 mb-4">SAFETY AND COMFORT ON EVERY JOURNEY.</p>
-            <h1 class="text-3xl font-bold mb-6">Start using NJS today.</h1>
+            <h1 class="text-3xl font-bold mb-6">Start using N-MERCE today.</h1>
             <div class="relative mb-6">
                 <form method="GET" action="{{ route('home') }}" class="flex justify-center mb-4">
                     <input type="text" id="search" name="search" placeholder="Search for products"
@@ -17,8 +17,8 @@
                     </button>
                 </form>
             </div>
-            <img src="{{ asset('images/helm4.webp') }}" alt="footer" alt="NJS Logo"
-                class="gambar mx-auto mb-4 w-[500px]">
+            <img src="{{ asset('images/footer5.webp') }}" alt="footer" alt="NJS Logo"
+                class="gambar mx-auto mb-4 w-[500px] rounded">
         </div>
     </div>
 
@@ -26,8 +26,8 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-between">
                 <div class="mb-4 lg:mb-0">
-                    <h2 class="text-xl font-bold mb-2">NJS</h2>
-                    <p class="text-gray-400">Our Helmets, Protecting You with Style and the Latest Innovation!</p>
+                    <h2 class="text-xl font-bold mb-2">N-MERCE</h2>
+                    <p class="text-gray-400">Our Products, Protecting You with Style and the Latest Innovation!</p>
                 </div>
                 <div class="flex flex-wrap lg:flex-no-wrap">
                     <div class="mr-8 mb-4 lg:mb-0">
@@ -51,10 +51,10 @@
                         <a href="https://wa.me/6285156495716" target="_blank" class="text-gray-400 hover:text-white">+62
                             85156495716</a>
                         <div class="flex space-x-4 mt-2">
-                            <a href="https://web.facebook.com/groups/905949876816001" target="_blank"
+                            <a href="https://www.facebook.com/nic.nicholasjr/" target="_blank"
                                 class="text-gray-400 hover:text-white">
                                 <i class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/njshelmet/" target="_blank"
+                            <a href="https://www.instagram.com/nichochandr/" target="_blank"
                                 class="text-gray-400 hover:text-white">
                                 <i class="fab fa-instagram"></i>
                             </a>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="text-center mt-8">
-                <p class="text-sm text-gray-400">© 2024 NJS Helmet. Seluruh hak cipta dilindungi.</p>
+                <p class="text-sm text-gray-400">© 2024 nichommerce. Seluruh hak cipta dilindungi.</p>
             </div>
         </div>
     </div>

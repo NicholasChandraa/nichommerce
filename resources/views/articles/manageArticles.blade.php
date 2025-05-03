@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Articles</title>
+    <title>Manajemen Artikel | N-MERCE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
         @media (max-width: 768px) {
@@ -213,11 +213,11 @@
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <form action="{{ route('articlePages.destroy', $article->id) }}" method="POST"
-                                    class="inline-block">
+                                    class="lg:flex inline-block lg:flex-col justify-end">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
-                                        class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition duration-200 text-center delete-button">
+                                        class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 transition duration-200 text-center delete-button">
                                         <i class="fas fa-trash-alt"></i> Delete
                                     </button>
                                 </form>

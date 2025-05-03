@@ -1,6 +1,33 @@
 @extends('layouts.homeLayout')
 
+@section('title' ,'Shop | N-MERCE')
+
 @section('content')
+<style>
+    .clamp-2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2; /* Jumlah baris yang ditampilin */
+    }
+    .clamp-3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+    }
+    @media (min-width: 1030px) {
+        .clamp-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+        }
+    }
+</style>
     <!-- Konten Utama -->
     <main class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center rounded-md mb-4 bg-white p-6">
@@ -93,10 +120,10 @@
                                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                                         class="w-full h-full object-cover mb-4" />
                                 </a>
-                                <h3 class="text-lg font-bold">
+                                <h3 class="text-lg font-bold clamp-2">
                                     {{ $product->name }}
                                 </h3>
-                                <p class="text-gray-600 description" data-full-description="{{ $product->description }}">
+                                <p class="text-gray-600 description clamp-2" data-full-description="{{ $product->description }}">
                                 </p>
                                 <div class="mt-auto">
                                     <p class="text-lg font-bold">

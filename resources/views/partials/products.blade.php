@@ -1,9 +1,12 @@
 @foreach($products as $product)
 <div class="bg-white p-4 rounded-lg shadow-md flex flex-col">
     <h3 class="mb-2 text-lg font-bold">{{$product->category ? $product->category->name : "Uncategorized"}}</h3>
-    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover mb-4">
-    <h3 class="text-lg font-bold">{{ $product->name }}</h3>
-    <p class="text-gray-600 description" data-full-description="{{ $product->description }}"></p>
+    <a href="{{ route('products.show', $product->id) }}" class="mb-4">
+                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                        class="w-full h-full object-cover mb-4" />
+                                </a>
+    <h3 class="text-lg font-bold clamp-2">{{ $product->name }}</h3>
+    <p class="text-gray-600 description clamp-2" data-full-description="{{ $product->description }}"></p>
     <div class="mt-auto">
         <p class="text-lg font-bold">Rp{{ number_format($product->price, 0, ',', '.') }}</p>
         <a href="{{ route('products.show', $product->id) }}" class="text-purple-500 hover:text-purple-800">Detail Produk</a>

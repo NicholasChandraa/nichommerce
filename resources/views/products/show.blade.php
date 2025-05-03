@@ -1,5 +1,7 @@
 @extends('layouts.homeLayout')
 
+@section('title', "N-MERCE | $product->name")
+
 @section('content')
     <style>
         .quantity-input {

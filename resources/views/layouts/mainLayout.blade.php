@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@yield('title', 'NJS Helmet Page')</title>
+    <title>@yield('title', 'N-MERCE Page')</title>
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
 </head>
 <style>
     #jumbotron {
@@ -28,45 +28,44 @@
 </style>
 
 <body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-white shadow-md relative z-50">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-4 mb-4 md:mb-0 mr-3">
-                <a href="{{ url('/') }}" class="lg:text-2xl font-bold">
-                    NJS HELMET
-                </a>
-            </div>
-            <nav class="flex space-x-4 items-center">
-                <a href="{{ route('main') }}" class="text-gray-700 hover:text-purple-500">
-                    Home
-                </a>
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-purple-500">
-                    Shop
-                </a>
-                <a href="/about" class="text-gray-700 hover:text-purple-500">
-                    About
-                </a>
-                <a href="/articlePages" class="text-gray-700 hover:text-purple-500 text-center">
-                    Articles
-                </a>
-                <div class="flex items-center space-x-4 relative">
-                    @if (Auth::user()->profile_photo)
-                        <img src="{{ asset('storage/' . Auth::user()->profile_photo) }}" alt="{{ Auth::user()->name }}"
-                            class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover cursor-pointer"
-                            onclick="toggleMenu(event)" />
-                        <img src="{{ asset('images/dropdownGudang.png') }}" alt="drop down gudang"
-                            class="w-4 object-cover cursor-pointer" onclick="toggleMenu(event)" />
-                    @endif
-                </div>
-            </nav>
-            <!-- Profile -->
-            <div class="md:flex md:justify-end absolute top-[110px] md:top-[78px] right-0 z-999">
-                <div id="menu" class="hidden md:w-[200px] bg-white shadow-md py-3 sm:p-4 mb-4 space-y-4 relative">
+    
+<!-- Header -->
+<header class="bg-white shadow-md relative z-50">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-4 mb-4 md:mb-0 mr-3">
+            <a href="{{ url('/') }}" class="lg:text-2xl font-bold">
+                N-MERCE
+            </a>
+        </div>
+        <nav class="flex space-x-4 items-center">
+            <a href="{{ route('main') }}" class="text-gray-700 hover:text-purple-500">
+                Home
+            </a>
+            <a href="{{ route('home') }}" class="text-gray-700 hover:text-purple-500">
+                Shop
+            </a>
+            <a href="/about" class="text-gray-700 hover:text-purple-500">
+                About
+            </a>
+            <a href="/articlePages" class="text-gray-700 hover:text-purple-500 text-center">
+                Articles
+            </a>
+            <div class="relative flex items-center space-x-4">
+                @if (Auth::user()->profile_photo)
+                    <img src="{{ asset('storage/' . Auth::user()->profile_photo) }}" alt="{{ Auth::user()->name }}"
+                        class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover cursor-pointer"
+                        onclick="toggleMenu(event)" />
+                    <img src="{{ asset('images/dropdownGudang.png') }}" alt="drop down gudang"
+                        class="w-4 object-cover cursor-pointer" onclick="toggleMenu(event)" />
+                @endif
+
+                <!-- Profile Menu -->
+                <div id="menu" class="hidden absolute top-full right-0 mt-2 w-[200px] bg-white shadow-md py-3 sm:p-4 mb-4 space-y-4 z-10">
                     <ul>
-                        <li>
+                        <li class="w-44">
                             <a href="{{ route('user.profile') }}"
                                 class="block px-4 py-2 text-gray-700 hover:bg-purple-50">
-                                Profile
+                                Settings
                             </a>
                         </li>
                         @if (Auth::user()->role === 'admin')
@@ -96,8 +95,9 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
+    </div>
+</header>
 
     <!-- Main Content -->
     @yield('content')
@@ -141,13 +141,14 @@
             const descriptions = document.querySelectorAll('.description');
             const descriptions2 =
                 document.querySelectorAll('.description2');
+                
             descriptions.forEach((description) => {
                 const fullDescription = description.getAttribute(
                     'data-full-description',
                 );
                 const words = fullDescription.split(' ');
                 if (words.length > 10) {
-                    const truncated = words.slice(0, 8).join(' ') + '...';
+                    const truncated = words.slice(0, 20).join(' ') + '...';
                     description.textContent = truncated;
                 } else {
                     description.textContent = fullDescription;
@@ -160,7 +161,7 @@
                 );
                 const words = fullDescription.split(' ');
                 if (words.length > 10) {
-                    const truncated = words.slice(0, 8).join(' ') + '...';
+                    const truncated = words.slice(0, 20).join(' ') + '...';
                     description.textContent = truncated;
                 } else {
                     description.textContent = fullDescription;
@@ -171,10 +172,10 @@
         // Untuk Jumbotron
         document.addEventListener('DOMContentLoaded', function() {
             const images = [
-                '{{ asset('images/gambar-login3.webp') }}',
-                '{{ asset('images/gambar-login4.webp') }}',
-                '{{ asset('images/gambar-login5.webp') }}',
-                // Add more image URLs as needed
+                '{{ asset('images/jumbotron4.jpg') }}',
+                '{{ asset('images/jumbotron5.jpg') }}',
+                '{{ asset('images/jumbotron3.jpg') }}',
+                '{{ asset('images/jumbotron6.jpg') }}',
             ];
 
             let currentIndex = 0;

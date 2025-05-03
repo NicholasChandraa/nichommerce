@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buat Produk</title>
+    <title>Buat Produk | N-MERCE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('images/njs-logo-2.jpg') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('images/logo-nichommerce.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <style>
         .modal {
@@ -63,8 +64,8 @@
         }
 
         .image-preview img {
-            width: 70%;
-            height: 70%;
+            width: 50%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -100,14 +101,25 @@
                 </div>
                 <div class="mb-4">
                     <label for="category_id" class="block text-gray-700 font-semibold">Kategori</label>
-                    <select id="category_id" name="category_id"
-                        class="w-full p-2 border border-gray-300 rounded mt-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                        required>
-                        <option value="">Pilih Kategori</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
-                    </select>
+                    <div class="flex flex-col">
+                        <select id="category_id" name="category_id"
+                            class="w-full p-2 border border-gray-300 rounded mt-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            required>
+                            <option value="">Pilih Kategori</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        <div class="mt-2">
+                        <button type="button" id="add-category-button" class="bg-purple-500 text-white px-4 py-1 rounded">Tambah Kategori</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 hidden" id="new-category-container">
+                    <label for="new-category" class="block text-gray-700 font-semibold">Kategori Baru</label>
+                    <input type="text" id="new-category" name="new-category"
+                        class="w-full p-2 border border-gray-300 rounded mt-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
+                    <button type="button" id="save-category-button" class="mt-2 bg-green-500 text-white px-4 py-1 rounded">Simpan</button>
                 </div>
                 <div class="mb-4">
                     <label for="description" class="block text-gray-700 font-semibold">Deskripsi</label>
@@ -161,9 +173,16 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            $('#category_id').select2({
+                placeholder: 'Pilih Kategori',
+                allowClear: true
+            });
+
             var submitButton = document.getElementById('submit-button');
             var cancelButton = document.getElementById('cancel-button');
             var confirmationModal = document.getElementById('confirmationModal');
@@ -173,6 +192,49 @@
             var imagePreview = document.getElementById('imagePreview');
             var imagePreviewImg = imagePreview.querySelector('img');
             var imagePreviewLabel = imagePreview.querySelector('label');
+
+            var addCategoryButton = document.getElementById('add-category-button');
+            var newCategoryContainer = document.getElementById('new-category-container');
+            var saveCategoryButton = document.getElementById('save-category-button');
+
+            addCategoryButton.addEventListener('click', function() {
+                newCategoryContainer.classList.remove('hidden');
+            });
+
+            saveCategoryButton.addEventListener('click', function() {
+                var newCategory = document.getElementById('new-category').value.trim();
+
+                if (newCategory) {
+                    $.ajax({
+                        url: '{{ route("categories.store") }}',
+                        method: 'POST',
+                        data: {
+                            name: newCategory,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            var newOption = new Option(response.name, response.id, true, true);
+                            $('#category_id').append(newOption).trigger('change');
+                            newCategoryContainer.classList.add('hidden');
+                            document.getElementById('new-category').value = '';
+                            Swal.fire({
+                                title: 'Success!',
+                                text: 'Kategori berhasil ditambahkan.',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            });
+                        },
+                        error: function() {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'Gagal menambahkan kategori.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    });
+                }
+            });
 
             submitButton.addEventListener('click', function() {
                 // Validasi angka untuk price dan stock

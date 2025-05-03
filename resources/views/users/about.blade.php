@@ -1,5 +1,7 @@
 @extends('article-layouts.articlePage')
 
+@section('title', 'About | N-MERCE')
+
 @section('content')
     <style>
         .active-tab {
@@ -21,32 +23,22 @@
         <section class="text-center py-16 bg-white">
             <div class="container mx-auto px-4">
                 <h1 class="text-2xl text-gray-900 md:text-4xl lg:text-6xl font-bold">
-                    Tentang NJS Helmet: Melindungi Perjalanan Anda dengan Gaya
-                    dan Inovasi Sejak 2006
+                    Tentang N-MERCE: Platform Terpercaya dengan Produk Berkualitas Tinggi dan Layanan Terbaik
                 </h1>
-                <div class="mt-8 relative">
-                    <img src="{{ url('images/1.jpg') }}" alt="Office" class="mx-auto rounded-lg shadow-lg w-full h-full" />
-                    <div class="absolute top-2 left-2 bg-orange-500 text-white p-2 rounded-full text-sm"></div>
+                <div class="mt-10 relative">
+                    <img src="{{ url('images/background4.jpg') }}" alt="Office" class="mx-auto rounded-lg shadow-lg w-full h-full" />
                 </div>
             </div>
         </section>
 
         <!-- Information Section -->
-        <section class="bg-purple-600 text-white md:-mt-56 lg:-mt-80 md:pt-56 lg:pt-80 pt-16 pb-16">
+        <section class="bg-purple-600 text-white md:-mt-56 lg:-mt-96 md:pt-56 lg:pt-96 pt-16 pb-16">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-                    Melindungi Perjalanan Anda dengan Gaya dan Inovasi
+                    Digital Products You Can Trust
                 </h2>
                 <p class="text-lg lg:text-xl mb-8">
-                    NJS Helmet didirikan pada tahun 2006 oleh PT. Surya Motor
-                    Shelmindo, perusahaan yang berbasis di Tangerang, Banten.
-                    Kami berkomitmen untuk memproduksi helm berkualitas tinggi
-                    yang memenuhi standar keamanan nasional dan internasional.
-                    Kami percaya bahwa helm bukan hanya sekadar alat pelindung,
-                    tetapi juga representasi dari kepribadian dan semangat
-                    berkendara setiap individu. Oleh karena itu, kami terus
-                    berinovasi dalam desain, teknologi, dan fitur-fitur unggulan
-                    untuk memenuhi kebutuhan dan preferensi beragam konsumen.
+                    N-MERCE didirikan pada bulan Juni 2024 oleh Nicholas Chandra, sebuah perusahaan yang berbasis di Banten, Kota Tangerang. Kami berkomitmen untuk menyediakan produk-produk digital berkualitas tinggi yang memenuhi standar kepercayaan dan performa. Kami percaya bahwa setiap produk digital yang kami jual bukan hanya sekadar barang elektronik, tetapi juga solusi untuk memenuhi kebutuhan sehari-hari Anda. Oleh karena itu, kami terus berinovasi dalam menyediakan produk, teknologi, dan layanan terbaik untuk memenuhi kebutuhan dan preferensi pelanggan kami.
                 </p>
 
                 <!-- Features Section -->
@@ -59,12 +51,10 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">
-                            Perlindungan Optimal
+                            Kepercayaan dan Transparansi
                         </h3>
                         <p>
-                            Kami berkomitmen untuk memberikan perlindungan
-                            maksimal bagi para pengendara sepeda motor dengan
-                            helm yang memenuhi standar SNI.
+                            Kami berkomitmen untuk memberikan layanan yang jujur dan transparan, memastikan setiap pelanggan merasa aman dan nyaman saat berbelanja di N-MERCE.
                         </p>
                     </div>
                     <div class="bg-white text-purple-600 p-6 rounded-lg shadow-lg">
@@ -75,12 +65,10 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">
-                            Desain dan Inovasi
+                            Kualitas Produk Terbaik
                         </h3>
                         <p>
-                            Kami terus berinovasi dalam desain helm yang stylish
-                            dan fungsional, serta menggunakan material
-                            berkualitas tinggi dan teknologi terkini.
+                            Kami menyediakan produk-produk digital dari merek-merek ternama yang sudah teruji kualitasnya, memastikan Anda mendapatkan barang terbaik sesuai kebutuhan.
                         </p>
                     </div>
                     <div class="bg-white text-purple-600 p-6 rounded-lg shadow-lg">
@@ -91,12 +79,10 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">
-                            Komitmen pada Keselamatan
+                            Performa dan Inovasi
                         </h3>
                         <p>
-                            Kami memberikan edukasi tentang pentingnya
-                            keselamatan berkendara dan berkomitmen untuk terus
-                            meningkatkan kualitas produk dan layanan kami.
+                            Kami terus berinovasi dalam menyediakan fitur-fitur unggulan dan teknologi terbaru untuk memastikan performa yang optimal dari setiap produk yang kami jual.
                         </p>
                     </div>
                 </div>
@@ -108,7 +94,7 @@
             <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-8 lg:mb-0">
                     <div class="image-overlay rounded-lg shadow-lg">
-                        <img src="{{ url('images/gambarHelm-estetik.jpg') }}" alt="Interior Design"
+                        <img src="{{ url('images/background5.webp') }}" alt="Interior Design"
                             class="rounded-lg w-full h-auto" />
                     </div>
                 </div>
@@ -133,12 +119,7 @@
                     <div id="missionContent" class="content">
                         <h2 class="text-2xl font-bold mb-4">Misi NJS Helmet</h2>
                         <p class="text-lg mb-4 text-justify indent-8">
-                            Misi kami adalah memberikan pengalaman berkendara
-                            yang lebih aman dan menyenangkan bagi seluruh
-                            masyarakat Indonesia. Kami berkomitmen untuk terus
-                            meningkatkan kualitas produk dan layanan kami, serta
-                            memberikan edukasi tentang pentingnya keselamatan
-                            berkendara.
+                            Misi kami adalah untuk menciptakan pengalaman belanja online yang aman dan menyenangkan bagi setiap pelanggan. Kami berupaya menyediakan produk-produk digital terbaik dengan harga yang kompetitif dan memastikan setiap produk memenuhi standar kualitas yang tinggi. Kami juga berkomitmen untuk memberikan layanan pelanggan yang responsif dan profesional, selalu siap membantu dan menjawab kebutuhan pelanggan dengan cepat dan tepat.
                         </p>
                         <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
                             onclick="toggleMoreContent('missionMoreContent')">
@@ -146,55 +127,17 @@
                         </button>
                         <div id="missionMoreContent" class="hidden-content mt-4 text-justify indent-8">
                             <p class="text-lg mb-4">
-                                Menciptakan produk-produk helm berkualitas
-                                tinggi: Mengembangkan dan memproduksi helm-helm
-                                yang memenuhi standar keamanan tertinggi,
-                                menggunakan material terbaik, dan menawarkan
-                                desain yang stylish serta inovatif untuk
-                                memenuhi kebutuhan dan preferensi beragam
-                                konsumen. Memberikan pengalaman berkendara yang
-                                aman dan nyaman: Memastikan setiap produk NJS
-                                Helmet memberikan perlindungan maksimal dan
-                                kenyamanan optimal bagi pengendara, sehingga
-                                mereka dapat menikmati perjalanan dengan rasa
-                                aman dan percaya diri.
+                                Kami juga berkomitmen untuk memberdayakan karyawan kami dengan memberikan pelatihan dan peluang pengembangan karir, sehingga mereka dapat memberikan layanan terbaik kepada pelanggan. Selain itu, kami berusaha untuk menjalankan operasional yang ramah lingkungan dan berkelanjutan, dengan meminimalkan dampak negatif terhadap lingkungan melalui berbagai inisiatif hijau. Kami percaya bahwa keberlanjutan adalah kunci untuk pertumbuhan jangka panjang, dan oleh karena itu, kami selalu mencari cara untuk mengurangi jejak karbon kami dan menggunakan sumber daya secara efisien.
                             </p>
                             <p class="text-lg mb-4">
-                                Meningkatkan kesadaran akan pentingnya
-                                keselamatan berkendara: Melakukan edukasi dan
-                                kampanye yang efektif untuk meningkatkan
-                                kesadaran masyarakat tentang pentingnya
-                                menggunakan helm berkualitas dan berkendara
-                                dengan aman. Menjadi pelopor dalam inovasi
-                                teknologi dan fitur keselamatan helm: Terus
-                                melakukan riset dan pengembangan untuk
-                                menghadirkan teknologi dan fitur-fitur terbaru
-                                yang dapat meningkatkan keamanan dan kenyamanan
-                                helm NJS. Membangun hubungan yang kuat dengan
-                                pelanggan dan mitra bisnis: Menjalin kemitraan
-                                yang saling menguntungkan dengan distributor,
-                                retailer, dan komunitas pengendara, serta
-                                memberikan layanan pelanggan yang responsif dan
-                                memuaskan.
-                            </p>
-                            <p class="text-lg mb-4">
-                                Berkontribusi positif terhadap masyarakat dan
-                                lingkungan: Melaksanakan program-program
-                                tanggung jawab sosial perusahaan yang berfokus
-                                pada keselamatan berkendara, pendidikan, dan
-                                pelestarian lingkungan.
+                                Di N-MERCE, kami memahami pentingnya memberikan nilai tambah kepada pelanggan kami. Oleh karena itu, kami berkomitmen untuk menyediakan berbagai fitur dan layanan tambahan, seperti dukungan teknis 24/7, kebijakan pengembalian yang fleksibel, dan program loyalitas yang menguntungkan. Kami juga berusaha untuk menjaga komunikasi yang terbuka dan transparan dengan pelanggan kami, mendengarkan masukan mereka, dan terus berusaha meningkatkan pengalaman belanja mereka.
                             </p>
                         </div>
                     </div>
                     <div id="visionContent" class="content hidden">
                         <h2 class="text-2xl font-bold mb-4">Visi NJS Helmet</h2>
                         <p class="text-lg mb-4 text-justify indent-8">
-                            Visi NJS Helmet adalah menjadi merek helm nomor satu
-                            di Indonesia dan pilihan utama para pengendara yang
-                            menghargai keselamatan, gaya, dan inovasi. Kami
-                            percaya bahwa helm bukan hanya sekadar alat
-                            pelindung, tetapi juga representasi dari kepribadian
-                            dan semangat berkendara setiap individu.
+                            Visi kami adalah menjadi platform e-commerce terdepan di Indonesia yang menyediakan produk digital berkualitas tinggi dengan layanan yang nyaman dan mudah digunakan oleh semua pelanggan. Kami bercita-cita untuk menjadi pilihan utama masyarakat dalam berbelanja produk digital dengan menghadirkan pengalaman belanja yang aman, cepat, dan memuaskan.
                         </p>
                         <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
                             onclick="toggleMoreContent('visionMoreContent')">
@@ -202,17 +145,7 @@
                         </button>
                         <div id="visionMoreContent" class="hidden-content mt-4">
                             <p class="text-lg mb-4 text-justify indent-8">
-                                Menjadi pemimpin pasar helm di Indonesia dan
-                                Asia Tenggara yang terdepan dalam inovasi,
-                                kualitas, dan keamanan, serta menjadi pilihan
-                                utama para pengendara yang menghargai gaya
-                                hidup, kenyamanan, dan keselamatan berkendara.
-                                Kami bercita-cita untuk terus mendorong
-                                batas-batas desain dan teknologi helm,
-                                menciptakan produk-produk yang tidak hanya
-                                melindungi, tetapi juga menginspirasi dan
-                                memberdayakan pengendara untuk mengejar passion
-                                mereka dengan percaya diri.
+                                Kami berusaha untuk menjadi inovator dalam industri ini, dengan selalu mengadopsi teknologi terbaru dan menerapkan praktik terbaik dalam operasional kami. Melalui pendekatan yang proaktif dan adaptif, kami ingin memastikan bahwa N-MERCE selalu relevan dan mampu memenuhi kebutuhan serta ekspektasi pelanggan di tengah dinamika pasar yang terus berubah. Kami percaya bahwa dengan menjaga kualitas, kepercayaan, dan inovasi sebagai landasan utama, kami dapat membangun hubungan jangka panjang yang saling menguntungkan dengan semua pemangku kepentingan.
                             </p>
                         </div>
                     </div>
@@ -221,11 +154,7 @@
                             Tujuan NJS Helmet
                         </h2>
                         <p class="text-lg mb-4 text-justify indent-8">
-                            Tujuan kami adalah untuk terus berinovasi dalam
-                            desain, teknologi, dan fitur-fitur unggulan untuk
-                            memenuhi kebutuhan dan preferensi beragam konsumen,
-                            sambil memastikan keselamatan dan kenyamanan
-                            pengguna.
+                            Tujuan utama kami adalah membangun dan mempertahankan kepercayaan pelanggan melalui layanan yang transparan dan konsisten. Kami percaya bahwa kepercayaan adalah fondasi utama dalam hubungan jangka panjang dengan pelanggan. Oleh karena itu, kami selalu berusaha menjaga integritas dan keterbukaan dalam setiap transaksi. Kami juga berkomitmen untuk meningkatkan kepuasan pelanggan dengan menyediakan produk berkualitas dan layanan yang cepat serta efisien. Kepuasan pelanggan adalah prioritas utama kami, dan kami selalu berusaha untuk melebihi harapan pelanggan dalam setiap aspek layanan kami. 
                         </p>
                         <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
                             onclick="toggleMoreContent('goalMoreContent')">
@@ -233,35 +162,13 @@
                         </button>
                         <div id="goalMoreContent" class="hidden-content mt-4">
                             <p class="text-lg mb-4 text-justify indent-8">
-                                Mencapai pangsa pasar terbesar di Indonesia:
-                                Menjadi merek helm nomor satu di Indonesia
-                                dengan meningkatkan penjualan dan memperluas
-                                jaringan distribusi ke seluruh wilayah.
-                                Mempertahankan reputasi sebagai produsen helm
-                                berkualitas tinggi: Terus meningkatkan kualitas
-                                produk dan layanan untuk memenuhi harapan
-                                pelanggan dan menjaga kepercayaan mereka
-                                terhadap merek NJS Helmet.
+                                kami memiliki tujuan untuk mengembangkan jangkauan pasar dan meningkatkan penjualan melalui strategi pemasaran yang efektif dan inovatif. Dengan mengoptimalkan potensi pasar dan terus memperluas jaringan distribusi, kami berharap dapat membawa N-MERCE menjadi pemimpin pasar dalam industri e-commerce produk digital di Indonesia. Kami juga bertujuan untuk terus meningkatkan keahlian dan keterampilan tim kami melalui pelatihan berkelanjutan dan pengembangan karir, sehingga mereka dapat memberikan kontribusi maksimal terhadap kesuksesan perusahaan.
                             </p>
                             <p class="text-lg mb-4 text-justify indent-8">
-                                Menjadi pemimpin dalam inovasi helm:
-                                Mengembangkan teknologi dan fitur-fitur baru
-                                yang dapat meningkatkan keamanan, kenyamanan,
-                                dan performa helm, serta menjadi trendsetter di
-                                industri helm. Membangun komunitas pengendara
-                                yang kuat: Menciptakan platform dan kegiatan
-                                yang dapat menghubungkan para pengendara NJS
-                                Helmet, serta mendorong mereka untuk berbagi
-                                pengalaman dan pengetahuan tentang keselamatan
-                                berkendara.
+                                Kami juga berkomitmen untuk meningkatkan efisiensi operasional kami dengan mengadopsi teknologi terbaru dan praktik terbaik di industri. Kami akan terus mengevaluasi dan meningkatkan proses internal kami untuk memastikan bahwa kami dapat memberikan layanan yang cepat, akurat, dan handal kepada pelanggan kami. Selain itu, kami bertujuan untuk membangun kemitraan strategis dengan pemasok dan produsen terkemuka untuk memastikan bahwa kami selalu memiliki akses ke produk-produk terbaru dan terbaik di pasar.
                             </p>
                             <p class="text-lg mb-4 text-justify indent-8">
-                                Menjadi perusahaan yang bertanggung jawab secara
-                                sosial dan lingkungan: Melaksanakan
-                                program-program CSR yang berdampak positif bagi
-                                masyarakat dan lingkungan, serta menjadi contoh
-                                bagi perusahaan lain dalam menjalankan bisnis
-                                yang berkelanjutan.
+                                kami berkomitmen untuk berperan aktif dalam komunitas dengan menjalankan program tanggung jawab sosial perusahaan yang berdampak positif bagi masyarakat sekitar. Kami percaya bahwa memberikan kembali kepada komunitas adalah bagian penting dari tanggung jawab kami sebagai perusahaan, dan kami berusaha untuk menciptakan perubahan positif melalui berbagai inisiatif sosial dan lingkungan. Kami juga memiliki tujuan untuk memperluas portofolio produk kami, menambahkan lebih banyak kategori produk digital untuk memenuhi kebutuhan pelanggan yang beragam. Kami akan terus mencari peluang untuk berinovasi dan meningkatkan penawaran produk kami, memastikan bahwa kami selalu memberikan nilai terbaik bagi pelanggan kami.
                             </p>
                         </div>
                     </div>
@@ -278,30 +185,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Barong Project -->
                     <div class="project-card text-white p-6">
-                        <h3 class="text-2xl font-bold mb-4">NJS ZX-1 BARONG Hitam Gloss - Helm Full Face <span
+                        <h3 class="text-2xl font-bold mb-4">N-MERCE Tech Fest 2024 - Innovate, Connect, and Discover <span
                                 class="project-title">—</span></h3>
-                        <p class="mb-4">Helm NJS ZX-1 BARONG menawarkan desain yang siap untuk interkom dan dilengkapi
-                            dengan visor jernih sebagai standar, sementara visor dark smoke tersedia sebagai pembelian
-                            terpisah...</p>
-                        <a href="/products/57"
+                        <p class="mb-4">N-MERCE Tech Fest 2024 adalah acara tahunan yang mengumpulkan para inovator, pengembang, dan penggemar teknologi dari seluruh Indonesia. Acara ini menawarkan berbagai sesi keynote...</p>
+                        <a href="/articlePages/6"
                             class="view-project-button border inline-block text-white px-4 py-2 rounded mt-4 hover:bg-white hover:text-black">View
-                            Product Collaboration</a>
-                        <a href="/products/57">
-                            <img src="{{ url('images/helm12.jpg') }}" alt="Barong Project" class="mt-4 rounded-lg">
+                            Article Collaboration</a>
+                        <a href="/articlePages/6">
+                            <img src="{{ url('images/collaboration.jpg') }}" alt="Barong Project" class="mt-4 rounded-lg">
                         </a>
                     </div>
                     <!-- Garuda Project -->
                     <div class="project-card text-white p-6">
-                        <h3 class="text-2xl font-bold mb-4">NJS ZX-1 GARUDA Hitam Gloss - Helm Full Face <span
+                        <h3 class="text-2xl font-bold mb-4">N-MERCE Digital Transforming the Digital Landscape <span
                                 class="project-title">—</span></h3>
-                        <p class="mb-4">NJS ZX-1 GARUDA hadir dengan warna Hitam Gloss dan menawarkan berbagai fitur
-                            unggulan. Desain helm ini siap untuk interkom, dan dilengkapi dengan visor bening sebagai
-                            standar...</p>
-                        <a href="/products/45"
+                        <p class="mb-4">N-MERCE Digital Innovation Summit adalah platform bagi para profesional dan pemimpin industri untuk berbagi wawasan tentang tren dan inovasi terkini di dunia digital. Acara ini mencakup...</p>
+                        <a href="/articlePages/7"
                             class="view-project-button border hover:bg-white hover:text-black inline-block text-white px-4 py-2 rounded mt-4">View
-                            Product Collaboration</a>
-                        <a href="/products/45">
-                            <img src="{{ url('images/21.jpeg') }}" alt="Garuda Project" class="mt-4 rounded-lg">
+                            Article Collaboration</a>
+                        <a href="/articlePages/7">
+                            <img src="{{ url('images/collaboration2.jpg') }}" alt="Garuda Project" class="mt-4 rounded-lg">
                         </a>
                     </div>
                 </div>
@@ -314,12 +217,11 @@
                 <!-- Contact Information -->
                 <div class="lg:w-1/2 mb-8 lg:mb-0">
                     <h2 class="text-4xl font-bold mb-4">Hubungi Kami</h2>
-                    <p class="mb-4">Punya pertanyaan, saran, atau ingin mengetahui lebih lanjut tentang NJS Helmet?
-                        Jangan ragu untuk menghubungi kami! Kami siap membantu Anda dengan senang hati.</p>
+                    <p class="mb-4">Punya pertanyaan, saran, atau ingin mengetahui lebih lanjut tentang N-MERCE? Jangan ragu untuk menghubungi kami! Kami siap membantu Anda dengan senang hati.</p>
                     <div class="grid grid-cols-1 lg:grid-cols-3">
                         <div>
-                            <h3 class="font-bold mb-2">Kantor Pusat & Pabrik:</h3>
-                            <p>PT. Surya Motor Shelmindo<br>Jl. Gatot Subroto Km. 8,5<br>Jatake, Tangerang 15136<br>Banten,
+                            <h3 class="font-bold mb-2">Kantor Pusat & Distribusi:</h3>
+                            <p>N-MERCE<br>Jl. Wijaya Kusuma<br>Cipondoh, Kota Tangerang 15136<br>Banten,
                                 Indonesia</p>
                         </div>
                         <div class="lg:pl-8 lg:pr-8">
@@ -328,7 +230,7 @@
                         </div>
                         <div>
                             <h3 class="font-bold mb-2 mt-4 lg:mt-0">Customer Service:</h3>
-                            <p>(021) 5971401<br>njshelp@gmail.com</p>
+                            <p>085156495716<br>nicholaschandraa01@gmail.com</p>
                         </div>
                     </div>
 
@@ -337,9 +239,9 @@
                         lainnya:</p>
                     <br>
                     <ul>
-                        <li>Facebook: NJS Helmet</li>
-                        <li>Instagram: @njshelmet</li>
-                        <li>YouTube: NJS Helmet Official</li>
+                        <li>Facebook: N-MERCE</li>
+                        <li>Instagram: @nichochandr</li>
+                        <li>YouTube: N-MERCE Official</li>
                     </ul>
                 </div>
                 {{-- Contact Form --}}

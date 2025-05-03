@@ -1,10 +1,37 @@
 @extends('layouts.mainLayout')
 
+@section('title', 'Home | N-MERCE')
+
 @section('content')
+<style>
+    .clamp-2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2; /* Jumlah baris yang ditampilin */
+    }
+    .clamp-3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+    }
+    @media (min-width: 1030px) {
+        .clamp-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+        }
+    }
+</style>
     <!-- Hero Section -->
     <section class="relative flex flex-col items-center justify-center bg-cover bg-center text-white py-24" id="jumbotron"
-        style="background-image: url('{{ asset('images/gambar-login3.webp') }}');">
-        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay -->
+        style="background-image: url('{{ asset('images/jumbotron4.jpg') }}');">
+        <div class="absolute inset-0 bg-black opacity-20"></div> <!-- Overlay -->
 
         <div class="container relative z-10 mx-auto text-center">
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">Discover The Greatest Products <br>FOR YOU.</h1>
@@ -29,8 +56,8 @@
                         <img src="{{ asset("storage/$product->image") }}" alt="{{ $product->name }}"
                             class="max-h-full max-w-full mt-auto loading="lazy">
                     </a>
-                    <h3 class="text-xl font-semibold mb-2 mt-auto">{{ $product->name }}</h3>
-                    <p class="description2 mb-4" data-full-description="{{ $product->description }}"></p>
+                    <h3 class="text-xl font-semibold mb-2 clamp-2">{{ $product->name }}</h3>
+                    <p class="description2 mb-4  mt-auto clamp-2" data-full-description="{{ $product->description }}"></p>
                     <a href="{{ route('products.show', $product->id) }}"
                         class="bg-white hover:bg-black hover:text-white py-2 px-4  border mt-auto text-center w-1/2 mx-auto">Detail
                         Produk</a>
@@ -41,7 +68,7 @@
 
     <!-- List produk -->
     <div class="container mx-auto">
-        <h2 class="text-2xl font-bold mb-4 bg-white p-6 shadow-md">Semua Produk</h2>
+        <h2 class="text-2xl font-bold mb-4 bg-white p-6 shadow-md">Rekomendasi</h2>
         <div class="relative">
             <button id="prev"
                 class="absolute left-0 top-1/3 transform -translate-y-1/2 bg-white border border-gray-300 p-2 rounded-full shadow-md focus:outline-none">
@@ -52,14 +79,17 @@
             </button>
 
             <div id="product-list" class="flex overflow-x-auto scroll-smooth space-x-4 pb-12">
-                @foreach ($products as $product)
-                    <div class="bg-white p-5 shadow-md overflow-hidden w-42 md:w-80 flex-shrink-0 flex flex-col">
+                @foreach ($AllProducts as $product)
+                    <div class="bg-white p-5 shadow-md overflow-hidden w-80 md:w-80 flex-shrink-0 flex flex-col">
                         <h3 class="mb-2 text-lg font-bold">
                             {{ $product->category ? $product->category->name : 'Uncategorized' }}</h3>
+                        <a href="{{ route('products.show', $product->id) }}">
                         <img src="{{ asset('storage/' . $product->image) }}" alt="Step 1"
-                            class="mx-auto h-64 w-64 lg:h-full lg:w-full mb-4 mt-auto loading="lazy">
-                        <h3 class="text-xl font-semibold mb-2 mt-auto">{{ $product->name }}</h3>
-                        <p class="description mb-4" data-full-description="{{ $product->description }}"></p>
+                            class="mx-auto h-64 w-64 lg:h-64 lg:w-full mb-4 mt-auto loading="lazy">
+                        </a>
+                            <!--lg:max-h-full lg:max-w-full INI UNTUK UKURAN YANG PAS-->
+                        <h3 class="text-xl font-semibold mb-2 mt-auto clamp-2">{{ $product->name }}</h3>
+                        <p class="description mb-4 clamp-2" data-full-description="{{ $product->description }}"></p>
                         <a href="{{ route('products.show', $product->id) }}"
                             class="bg-white hover:bg-black hover:text-white border py-2 px-4 mt-auto text-center">Detail
                             Produk</a>
@@ -79,6 +109,7 @@
     <!-- Semua Produk -->
     <section class="bg-white py-10">
         <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4 bg-white p-6 shadow-md">Semua Produk</h2>
             <div id="product-list2">
                 @include('partials.mainProducts', ['products' => $products])
             </div>

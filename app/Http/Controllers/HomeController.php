@@ -41,7 +41,8 @@ class HomeController extends Controller
         }
 
         // Pagination
-        $products = $query->paginate(9);
+        $AllProducts = Product::inRandomOrder()->get();
+        $products = $query->inRandomOrder()->paginate(9);
         $categories = Category::all();
 
         $latestProducts = Product::orderBy('created_at', 'desc')->take(6)->get();
@@ -55,7 +56,7 @@ class HomeController extends Controller
 
         $articles = Article::latest()->get();
     
-        return view('users.main', compact('products', 'categories', 'cart', 'latestProducts', 'articles'));
+        return view('users.main', compact('products', 'categories', 'cart', 'latestProducts', 'articles', 'AllProducts'));
     }
     public function index(Request $request)
     {
@@ -88,7 +89,7 @@ class HomeController extends Controller
         }
 
         // Pagination
-        $products = $query->paginate(15);
+        $products = $query->latest()->paginate(15);
         $categories = Category::all();
 
         if ($request->ajax()) {

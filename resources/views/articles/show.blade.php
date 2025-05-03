@@ -1,6 +1,13 @@
 @extends('article-layouts.article-layouts')
 
+@section('title', "N-MERCE | $article->title")
+
 @section('content')
+    <style>
+        .indent {
+            text-indent: 25px;
+        }
+    </style>
     <div class="container bg-white mx-auto px-4 py-8">
         <div class="lg:w-[75%] mx-auto">
             <div class="flex justify-between items-center mb-8">
@@ -29,7 +36,7 @@
                     Author : {{ $article->author }} - {{ $article->created_at->format('F j, Y') }}
                 </p>
             </div>
-            <div class="prose max-w-none">
+            <div class="prose max-w-none text-justify">
                 @php
                     $content = $article->content;
                     $paragraphs = explode("\n", $content);
@@ -49,7 +56,7 @@
                             {{ $paragraph }}
                         </h2>
                     @else
-                        <p class="mb-4">{{ $paragraph }}</p>
+                        <p class="mb-4 indent">{{ $paragraph }}</p>
                     @endif
                 @endforeach
             </div>

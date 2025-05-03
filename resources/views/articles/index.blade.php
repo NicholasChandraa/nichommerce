@@ -1,5 +1,7 @@
 @extends('article-layouts.articlePage')
 
+@section('title', 'Artikel | N-MERCE')
+
 @section('content')
     <style>
         .popular-article img {
@@ -7,6 +9,30 @@
             width: 100%;
             height: 100%;
         }
+        
+    .clamp-2 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2; /* Jumlah baris yang ditampilin */
+    }
+    .clamp-3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+    }
+    @media (min-width: 1030px) {
+        .clamp-3 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+        }
+    }
     </style>
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center h-[500px]" style="background-image: url('images/pemandangan2.jpg')">
@@ -89,10 +115,10 @@
                             </a>
                             <div class="mt-5">
                                 <p class="text-gray-500 text-sm mb-2">{{ $article->created_at->format('F j, Y') }}</p>
-                                <a href="{{ route('articlePages.show', $article->id) }}">
+                                <a href="{{ route('articlePages.show', $article->id) }}" class="clamp-2">
                                     <h3 class="text-xl font-bold">{{ $article->title }}</h3>
                                 </a>
-                                <p class="text-gray-600 mt-2 pr-4">{{ $article->author }} -
+                                <p class="text-gray-600 mt-2 pr-4 clamp-2">{{ $article->author }} -
                                     {{ Str::limit($article->content, 185) }}.</p>
                                 <p class="text-gray-500 text-sm mt-2">Kategori - {{ $article->category->name }}</p>
                             </div>
@@ -111,9 +137,9 @@
                                 <div class="px-1">
                                     <p class="text-gray-500 text-sm">{{ $article->created_at->format('F j, Y') }}</p>
                                     <a href="{{ route('articlePages.show', $article->id) }}">
-                                        <h4 class="text-lg font-bold">{{ $article->title }}</h4>
+                                        <h4 class="text-lg font-bold clamp-2">{{ $article->title }}</h4>
                                     </a>
-                                    <p class="text-gray-500 text-sm">{{ $article->author }} -
+                                    <p class="text-gray-500 text-sm text-justify">{{ $article->author }} -
                                         {{ Str::limit($article->content, 120) }}.</p>
                                 </div>
                             </article>

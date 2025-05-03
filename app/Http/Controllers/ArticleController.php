@@ -71,14 +71,15 @@ class ArticleController extends Controller
         }
 
         $articles = Article::latest()->paginate(6);
+        $allArticles = Article::inRandomOrder()->paginate(6);
 
         if ($request->ajax()) {
-            return view('articles.partials.articles', compact('articles'))->render();
+            return view('articles.partials.articles', compact('allArticles'))->render();
         }
 
         $categories = ArticleCategory::all();
-
-        return view('articles.index', compact('articles', 'categories'));
+        
+        return view('articles.index', compact('articles', 'allArticles', 'categories'));
     }
 
     public function filter(Request $request)

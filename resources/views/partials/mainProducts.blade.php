@@ -6,8 +6,8 @@
         <a href="{{ route('products.show', $product->id) }}" class="flex justify-center items-center h-48 lg:h-80">
             <img src="{{ asset("storage/$product->image") }}" alt="{{ $product->name }}" class="mx-auto mb-4 h-full object-cover" loading="lazy">
         </a>
-        <h3 class="text-xl font-semibold mb-2">{{ $product->name }}</h3>
-        <p class="description2 mb-4" data-full-description="{{ $product->description }}"></p>
+        <h3 class="text-xl font-semibold mb-2 clamp-2">{{ $product->name }}</h3>
+        <p class="description2 mb-4 clamp-2" data-full-description="{{ $product->description }}"></p>
         <a href="{{ route('products.show', $product->id) }}" class="bg-white hover:bg-black hover:text-white border py-2 px-4 mt-auto text-center">Detail Produk</a>
     </div>
     @endforeach
