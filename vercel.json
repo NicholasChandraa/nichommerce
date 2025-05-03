@@ -1,9 +1,8 @@
 {
     "version": 2,
     "functions": {
-
         "api/index.php": {
-            "excludeFiles": "{node_modules/**,tests/**,.git/**,.github/**,storage/**,bootstrap/cache/**,public/**,database/**,resources/**,.phpunit.result.cache,*.log,artisan,server.php,.env*,.gitattributes,.gitignore,*.md,phpunit.xml,*.config.js}"
+            "excludeFiles": "{node_modules,tests,.git,.env,storage/logs,storage/framework/cache,storage/framework/sessions,storage/framework/views,public/hot,bootstrap/cache,public}/**"
         }
     },
     "builds": [
