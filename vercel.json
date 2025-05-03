@@ -3,11 +3,14 @@
     "builds": [
         {
             "src": "api/index.php",
-            "use": "vercel-php@0.6.0"
+            "use": "vercel-php"
         },
         {
-            "src": "public/**",
-            "use": "@vercel/static"
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "public"
+            }
         }
     ],
     "routes": [
