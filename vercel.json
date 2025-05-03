@@ -4,6 +4,10 @@
         {
             "src": "public/index.php",
             "use": "@vercel/php"
+        },
+        {
+            "src": "resources/js/app.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -13,3 +17,4 @@
         }
     ]
 }
+  
